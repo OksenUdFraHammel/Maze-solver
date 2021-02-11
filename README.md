@@ -1,3 +1,3 @@
 # Maze-solver
 
-Maze-solver eksamensprojekt som skal være et lille spil hvor spilleren skal gennemføre en labyrint så hurtigt som muligt
+Maze-solver prøveeksamensprojekt som er et lille spil hvor spilleren skal prøve at gennemføre en labyrint på så få trin som muligt.
