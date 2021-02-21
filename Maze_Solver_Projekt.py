@@ -60,41 +60,13 @@ while m[end[0]][end[1]] == 0:
                     m[i][j+1] = n + 1
 
 i, j = end
-n = m[i][j]
-P = [(i,j)]
-while n > 1:
-    if i > 0 and m[i - 1][j] == n-1:
-        i, j = i-1, j
-        P.append((i, j))
-        n-=1
-    elif j > 0 and m[i][j - 1] == n-1:
-        i, j = i, j-1
-        P.append((i, j))
-        n-=1
-    elif i < len(m) - 1 and m[i + 1][j] == n-1:
-        i, j = i+1, j
-        P.append((i, j))
-        n-=1
-    elif j < len(m[i]) - 1 and m[i][j + 1] == n-1:
-        i, j = i, j+1
-        P.append((i, j))
-        n -= 1
-
-min_moves = []
-for i in range (len(m)):
-    for j in range (len(m[i])):
-        min_moves.append(m[i][j])
-
-#print(m)
-#print(P)
-#print(max(min_moves)-1)
 
 pg.init()
 
 def print_moves():
     moves.append(1)
     pg.draw.rect(screen,(50,50,50), pg.Rect(805,5,190,145))
-    text = font1.render("Min. {}".format((max(min_moves)-1)), True,(255,255,255))
+    text = font1.render("Min. {}".format(n), True,(255,255,255))
     text_rect = text.get_rect()
     text_rect.center = (900,45)
     screen.blit(text,text_rect)
@@ -118,7 +90,7 @@ moves = []
 player = [start]
 
 pg.draw.rect(screen,(50,50,50), pg.Rect(805,5,190,145))
-text = font1.render("Min. {}".format((max(min_moves)-1)), True,(255,255,255))
+text = font1.render("Min. {}".format(n), True,(255,255,255))
 text_rect = text.get_rect()
 text_rect.center = (900,45)
 screen.blit(text,text_rect)
@@ -207,12 +179,12 @@ while running:
         text = font2.render("Press [SPACE] to try again", True,(0,0,0))
         text_rect.center = (333,500)
         screen.blit(text,text_rect)
-        if int(len(moves)) - int(max(min_moves)-1) == 0:
+        if int(len(moves)) - int(n) == 0:
             text = font3.render("Perfect run!", True,(0,0,0))
             text_rect.center = (452,400)
             screen.blit(text,text_rect)   
         else:
-            text = font3.render("Try to complete it in {} less moves".format(int(len(moves)-int(max(min_moves)-1))), True,(0,0,0))
+            text = font3.render("Try to complete it in {} less moves".format(int(len(moves)-n)), True,(0,0,0))
             text_rect.center = (340,400)
             screen.blit(text,text_rect)
         
@@ -232,7 +204,7 @@ while running:
         player = [start]
         screen.fill((0,0,0))
         pg.draw.rect(screen,(50,50,50), pg.Rect(805,5,190,145))
-        text = font1.render("Min. {}".format((max(min_moves)-1)), True,(255,255,255))
+        text = font1.render("Min. {}".format(n), True,(255,255,255))
         text_rect = text.get_rect()
         text_rect.center = (900,45)
         screen.blit(text,text_rect)
