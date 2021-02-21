@@ -4,7 +4,7 @@ Programmør:
 Andreas Hyldegaard Hansen
 
 
-Påkrævede pakker:
+Nødvendige pakker:
 Pygame (pip install pygame)
 
 
