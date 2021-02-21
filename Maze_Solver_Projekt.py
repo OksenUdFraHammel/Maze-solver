@@ -59,8 +59,6 @@ while m[end[0]][end[1]] == 0:
                 if j<len(m[i])-1 and m[i][j+1] == 0 and maze1[i][j+1] == 0:
                     m[i][j+1] = n + 1
 
-i, j = end
-
 pg.init()
 
 def print_moves():
